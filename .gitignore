@@ -19,4 +19,6 @@ Thumbs.db
 .env
 # Large files
 models/*.pkl
-notebooks/data/*.csv
+notebooks/data/*.csvgit rm --cached models/house_price_model.pkl
+
+notebooks/data/
