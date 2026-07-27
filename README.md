@@ -67,9 +67,12 @@ house-price-project/
 │   └── requirements.txt
 │
 ├── frontend/
-│   ├── src/
 │   ├── public/
-│   └── package.json
+│   ├── src/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── index.html
 │
 ├── models/
 │   ├── house_price_model.pkl
@@ -172,4 +175,4 @@ Data preprocessing includes:
 
 ## 👨‍💻 Developed By
 
-ITI Machine Learning Project
+Sara Ahmed Farouk Allam
