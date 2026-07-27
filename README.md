@@ -2,128 +2,23 @@
 
 ## 📌 Project Overview
 
-This project is a Machine Learning web application developed as part of the ITI training program.
+This project is an end-to-end Machine Learning web application developed as part of the **ITI Machine Learning Training Program**.
 
-The system predicts the price of a house based on several features such as location, status, furnishing, carpet area, number of bathrooms, balconies, floor number, ownership, facing direction, and other property characteristics.
+The application predicts house prices based on several property features such as location, status, transaction type, furnishing, ownership, facing direction, carpet area, floor number, bathrooms, balconies, and overlooking.
 
-The application consists of:
+The project demonstrates the complete Machine Learning workflow, including:
 
-- Machine Learning model
-- FastAPI backend
-- React frontend
-- REST API communication
-
----
-
-## ✨ Features
-
-- Predict house prices using a trained Random Forest model
-- User-friendly React interface
-- FastAPI REST API
-- Dynamic location list
-- Real-time predictions
-- Clean and responsive interface
-
----
-## 📊 Dataset
-
-This project uses a House Price Prediction dataset containing various property features, including:
-
-- Location
-- Property Status
-- Transaction Type
-- Furnishing
-- Facing Direction
-- Overlooking
-- Ownership
-- Carpet Area
-- Floor Number
-- Bathrooms
-- Balconies
-- House Price
-
-### Dataset Source
-
-The dataset was obtained from Kaggle for educational purposes.
-
-To reproduce this project:
-
-1. Download the dataset.
-2. Place the CSV file inside:
-
-```
-notebooks/data/
-```
-
-3. Run the notebook:
-
-```
-notebooks/house_price_model.ipynb
-```
-
-This notebook performs preprocessing, feature engineering, model training, evaluation, and exports the trained model.
-
-## 🛠 Technologies Used
-
-### Machine Learning
-
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Joblib
-
-### Backend
-
-- FastAPI
-- Pydantic
-- Uvicorn
-
-### Frontend
-
-- React
-- Vite
-- Bootstrap
-
-### Version Control
-
-- Git
-- GitHub
+- Data preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Model Training & Evaluation
+- FastAPI Backend
+- React Frontend
+- REST API Integration
 
 ---
 
-## 📂 Project Structure
-
-```
-house-price-project/
-│
-├── backend/
-│   ├── app.py
-│   ├── predictor.py
-│   ├── schemas.py
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── vite.config.js
-│   └── index.html
-│
-├── models/
-│   ├── house_price_model.pkl
-│   ├── feature_columns.pkl
-│   └── locations.json
-│
-├── notebooks/
-│   └── house_price_model.ipynb
-│
-└── README.md
-```
-
----
-## 🏗️ System Architecture
+# 🏗️ System Architecture
 
 ```text
                  +----------------------+
@@ -155,9 +50,159 @@ house-price-project/
                  | Displays Prediction  |
                  +----------------------+
 ```
-## 🚀 How to Run
 
-### Backend
+---
+
+# ✨ Features
+
+- Predict house prices using Machine Learning
+- Random Forest Regressor model
+- FastAPI REST API
+- React + Vite Frontend
+- Dynamic location dropdown
+- Real-time prediction
+- Responsive and user-friendly interface
+
+---
+
+# 📊 Dataset
+
+This project uses the **House Price** dataset by **Juhi Bhojani** from Kaggle.
+
+### Dataset Link
+
+https://www.kaggle.com/datasets/juhibhojani/house-price
+
+## Download Instructions
+
+1. Download the dataset from Kaggle.
+2. Extract the ZIP file.
+3. Place the dataset inside:
+
+```text
+notebooks/data/
+```
+
+4. Run:
+
+```text
+notebooks/house_price_model.ipynb
+```
+
+The notebook performs:
+
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Model Training
+- Model Evaluation
+- Model Export
+
+---
+
+# 🛠️ Technologies Used
+
+## Machine Learning
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Joblib
+
+## Backend
+
+- FastAPI
+- Pydantic
+- Uvicorn
+
+## Frontend
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+## Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```text
+house-price-project/
+
+├── backend/
+│   ├── app.py
+│   ├── predictor.py
+│   ├── schemas.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── .env
+│
+├── models/
+│   ├── house_price_model.pkl
+│   ├── feature_columns.pkl
+│   └── locations.json
+│
+├── notebooks/
+│   ├── data/
+│   └── house_price_model.ipynb
+│
+├── screenshots/
+│   ├── before_prediction.png
+│   └── after_prediction.png
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+# 🚀 Setup Instructions
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/saraallam714-code/house-price-project.git
+
+cd house-price-project
+```
+
+---
+
+## 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it.
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## 3. Backend Setup
 
 ```bash
 cd backend
@@ -175,7 +220,7 @@ http://127.0.0.1:8000
 
 ---
 
-### Frontend
+## 4. Frontend Setup
 
 ```bash
 cd frontend
@@ -193,63 +238,127 @@ http://localhost:5173
 
 ---
 
-## 🔗 API Endpoints
+# 🔐 Environment Variables
 
-### GET
+Create a file named:
 
+```text
+frontend/.env
 ```
-/locations
-```
+
+Add:
+
+| Variable | Value |
+|----------|-------------------------|
+| VITE_API_URL | http://127.0.0.1:8000 |
+
+> **Note:** The `.env` file is intentionally ignored by Git for security reasons. Create it manually before running the frontend.
+
+---
+
+# 🔗 API Reference
+
+## GET /locations
 
 Returns all available locations.
 
----
+### Example Response
 
-### POST
-
+```json
+{
+  "locations": [
+    "bhopal",
+    "mumbai",
+    "indore"
+  ]
+}
 ```
-/predict
+
+---
+
+## POST /predict
+
+### Request
+
+```json
+{
+  "location":"bhopal",
+  "status":"Ready To Move",
+  "transaction":"Resale",
+  "furnishing":"Semi-Furnished",
+  "facing":"North",
+  "overlooking":"Main Road",
+  "ownership":"Freehold",
+  "carpet_area_sqft":1500,
+  "floor_num":2,
+  "bathroom":1,
+  "balcony":2
+}
 ```
 
-Returns the predicted house price.
+### Response
+
+```json
+{
+  "predicted_price": 5825300
+}
+```
 
 ---
 
-## 📷 Application
+## cURL Example
 
-The application allows users to:
-
-- Select house location
-- Select property details
-- Enter house specifications
-- Predict the estimated house price
+```bash
+curl -X POST http://127.0.0.1:8000/predict \
+-H "Content-Type: application/json" \
+-d "{\"location\":\"bhopal\",\"status\":\"Ready To Move\",\"transaction\":\"Resale\",\"furnishing\":\"Semi-Furnished\",\"facing\":\"North\",\"overlooking\":\"Main Road\",\"ownership\":\"Freehold\",\"carpet_area_sqft\":1500,\"floor_num\":2,\"bathroom\":1,\"balcony\":2}"
+```
 
 ---
 
-## 📈 Machine Learning Model
+# 📈 Machine Learning Model
 
-Algorithm used:
+**Selected Model**
 
 - Random Forest Regressor
 
-Data preprocessing includes:
+### Data Preprocessing
 
 - Missing value handling
-- Feature engineering
+- Feature Engineering
+- Floor extraction
+- Area conversion
 - One-Hot Encoding
-- Feature scaling where required
+- Numerical feature preparation
 
 ---
-## 📈 Model Performance
 
-The following models were evaluated during development:
+# 📊 Model Performance
 
 | Model | MAE | RMSE | R² |
 |------|-------------:|-------------:|------:|
 | Linear Regression | 5.73e+06 | 7.58e+07 | 0.0171 |
-| Random Forest (Selected Model) | 1.92e+06 | 7.63e+07 | 0.0024 |
+| **Random Forest (Selected Model)** | **1.92e+06** | **7.63e+07** | **0.0024** |
 
 The Random Forest Regressor was selected as the final model because it achieved the lowest Mean Absolute Error (MAE), which was the primary evaluation metric for this project.
-## 👨‍💻 Developed By
 
-Sara Ahmed Farouk Allam
+---
+
+# 📷 Application Screenshots
+
+## Before Prediction
+
+![Before Prediction](screenshots/before_prediction.png)
+
+---
+
+## After Prediction
+
+![After Prediction](screenshots/after_prediction.png)
+
+---
+
+# 👨‍💻 Developed By
+
+**Sara Ahmed Farouk Allam**
+
