@@ -55,12 +55,12 @@ The project demonstrates the complete Machine Learning workflow, including:
 
 # ✨ Features
 
-- Predict house prices using Machine Learning
+- Predict house prices using a trained Machine Learning model
 - Random Forest Regressor model
 - FastAPI REST API
-- React + Vite Frontend
+- React + Vite frontend
 - Dynamic location dropdown
-- Real-time prediction
+- Real-time predictions
 - Responsive and user-friendly interface
 
 ---
@@ -69,7 +69,7 @@ The project demonstrates the complete Machine Learning workflow, including:
 
 This project uses the **House Price** dataset by **Juhi Bhojani** from Kaggle.
 
-### Dataset Link
+## Dataset Link
 
 https://www.kaggle.com/datasets/juhibhojani/house-price
 
@@ -77,7 +77,7 @@ https://www.kaggle.com/datasets/juhibhojani/house-price
 
 1. Download the dataset from Kaggle.
 2. Extract the ZIP file.
-3. Place the dataset inside:
+3. Place the CSV file inside:
 
 ```text
 notebooks/data/
@@ -146,8 +146,7 @@ house-price-project/
 │   ├── src/
 │   ├── package.json
 │   ├── package-lock.json
-│   ├── vite.config.js
-│   └── .env
+│   └── vite.config.js
 │
 ├── models/
 │   ├── house_price_model.pkl
@@ -226,7 +225,23 @@ http://127.0.0.1:8000
 cd frontend
 
 npm install
+```
 
+Create a file named:
+
+```text
+.env
+```
+
+Add the following line:
+
+```text
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+Then start the frontend:
+
+```bash
 npm run dev
 ```
 
@@ -240,19 +255,11 @@ http://localhost:5173
 
 # 🔐 Environment Variables
 
-Create a file named:
+| Variable | Description | Example |
+|----------|-------------|---------|
+| VITE_API_URL | Backend API URL | http://127.0.0.1:8000 |
 
-```text
-frontend/.env
-```
-
-Add:
-
-| Variable | Value |
-|----------|-------------------------|
-| VITE_API_URL | http://127.0.0.1:8000 |
-
-> **Note:** The `.env` file is intentionally ignored by Git for security reasons. Create it manually before running the frontend.
+> **Note:** The `.env` file is intentionally ignored by Git for security and configuration purposes. Create it manually before running the frontend.
 
 ---
 
@@ -300,7 +307,7 @@ Returns all available locations.
 
 ```json
 {
-  "predicted_price": 5825300
+  "predicted_price":5825300
 }
 ```
 
@@ -325,6 +332,7 @@ curl -X POST http://127.0.0.1:8000/predict \
 ### Data Preprocessing
 
 - Missing value handling
+- Exploratory Data Analysis (EDA)
 - Feature Engineering
 - Floor extraction
 - Area conversion
@@ -340,7 +348,7 @@ curl -X POST http://127.0.0.1:8000/predict \
 | Linear Regression | 5.73e+06 | 7.58e+07 | 0.0171 |
 | **Random Forest (Selected Model)** | **1.92e+06** | **7.63e+07** | **0.0024** |
 
-The Random Forest Regressor was selected as the final model because it achieved the lowest Mean Absolute Error (MAE), which was the primary evaluation metric for this project.
+The Random Forest Regressor was selected as the final model because it achieved the lowest Mean Absolute Error (MAE), making it the most suitable model for this application.
 
 ---
 
@@ -358,10 +366,13 @@ The Random Forest Regressor was selected as the final model because it achieved 
 
 ---
 
+# ✅ Conclusion
+
+This project demonstrates a complete Machine Learning deployment pipeline, starting from data preprocessing and model training to building a REST API with FastAPI and integrating it with a React frontend. It showcases how a trained Machine Learning model can be deployed as a user-friendly web application for real-time house price prediction.
+
+---
+
 # 👨‍💻 Developed By
 
 **Sara Ahmed Farouk Allam**
 
-Helwan National University
-
-Intelligent Systems Engineering
