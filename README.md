@@ -25,6 +25,43 @@ The application consists of:
 - Clean and responsive interface
 
 ---
+## 📊 Dataset
+
+This project uses a House Price Prediction dataset containing various property features, including:
+
+- Location
+- Property Status
+- Transaction Type
+- Furnishing
+- Facing Direction
+- Overlooking
+- Ownership
+- Carpet Area
+- Floor Number
+- Bathrooms
+- Balconies
+- House Price
+
+### Dataset Source
+
+The dataset was obtained from Kaggle for educational purposes.
+
+To reproduce this project:
+
+1. Download the dataset.
+2. Place the CSV file inside:
+
+```
+notebooks/data/
+```
+
+3. Run the notebook:
+
+```
+notebooks/house_price_model.ipynb
+```
+
+This notebook performs preprocessing, feature engineering, model training, evaluation, and exports the trained model.
 
 ## 🛠 Technologies Used
 
@@ -86,7 +123,38 @@ house-price-project/
 ```
 
 ---
+## 🏗️ System Architecture
 
+```text
+                 +----------------------+
+                 |   React Frontend     |
+                 |     (Vite + React)   |
+                 +----------+-----------+
+                            |
+                      HTTP Requests
+                            |
+                            ▼
+                 +----------------------+
+                 |    FastAPI Backend   |
+                 |      REST API        |
+                 +----------+-----------+
+                            |
+                      Prediction Logic
+                            |
+                            ▼
+                 +----------------------+
+                 | Random Forest Model  |
+                 | house_price_model.pkl|
+                 +----------+-----------+
+                            |
+                      Predicted Price
+                            |
+                            ▼
+                 +----------------------+
+                 |   React Frontend     |
+                 | Displays Prediction  |
+                 +----------------------+
+```
 ## 🚀 How to Run
 
 ### Backend
@@ -172,7 +240,16 @@ Data preprocessing includes:
 - Feature scaling where required
 
 ---
+## 📈 Model Performance
 
+The following models were evaluated during development:
+
+| Model | MAE | RMSE | R² |
+|------|-------------:|-------------:|------:|
+| Linear Regression | 5.73e+06 | 7.58e+07 | 0.0171 |
+| Random Forest (Selected Model) | 1.92e+06 | 7.63e+07 | 0.0024 |
+
+The Random Forest Regressor was selected as the final model because it achieved the lowest Mean Absolute Error (MAE), which was the primary evaluation metric for this project.
 ## 👨‍💻 Developed By
 
 Sara Ahmed Farouk Allam

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+console.log("API_URL =", API_URL);
 function App() {
   const [location, setLocation] = useState("");
   const [status, setStatus] = useState("Ready To Move");
@@ -19,14 +22,14 @@ function App() {
   const [prediction, setPrediction] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/locations")
+    fetch(`${API_URL}/locations`)
       .then((res) => res.json())
       .then((data) => setLocations(data.locations))
       .catch((err) => console.log(err));
   }, []);
 
   const handlePredict = async () => {
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch(`${API_URL}/predict`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
